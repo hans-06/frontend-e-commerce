@@ -21,14 +21,6 @@ const Login = () => {
       const res = await axios.post(
         `${process.env.REACT_APP_API}/api/v1/auth/login`,
         { email, password },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": true,
-          },
-          withCredentials: true,
-        }
       );
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
